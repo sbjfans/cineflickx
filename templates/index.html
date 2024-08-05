@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Home - CineFlix{% endblock %}
+
+{% block content %}
+<h2>Welcome to CineFlix</h2>
+{% if session.username %}
+    <p>Hello, {{ session.username }}!</p>
+{% else %}
+    <p>Please <a href="{{ url_for('login') }}">log in</a> or <a href="{{ url_for('register') }}">register</a>.</p>
+{% endif %}
+{% endblock %}

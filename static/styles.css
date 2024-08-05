@@ -1,0 +1,137 @@
+/* 일반적인 스타일 초기화 */
+body, h1, nav, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 전체 페이지 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100px; /* 이미지 크기 조정 */
+    height: auto;
+    margin-right: 20px; /* 제목과 이미지 사이의 간격 */
+}
+
+header h1 {
+    margin: 0;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #272e35;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.auth-buttons a.button:hover {
+    background-color: #425161;
+}
+
+/* 네비게이션 스타일 */
+nav {
+    width: 100%;
+    background-color: #444;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+/* 메인 컨텐츠 스타일 */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 플래시 메시지 스타일 */
+.flashes {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flashes li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.flashes .success {
+    background-color: #28a745;
+}
+
+.flashes .danger {
+    background-color: #dc3545;
+}
+
+.flashes .warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
