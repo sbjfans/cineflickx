@@ -1,0 +1,6 @@
+Flask
+Flask-WTF
+mysql-connector-python
+wtforms
+werkzeug
+#pip install -r requirements.txt

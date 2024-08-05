@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}CineFlix{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="CineFlix Logo" class="logo">
+                <h1>CineFlix</h1>
+            </div>
+            <div class="auth-buttons">
+                {% if session.username %}
+                    <a href="{{ url_for('logout') }}" class="button">로그아웃</a>
+                    <a href="{{ url_for('delete_account') }}" class="button">회원탈퇴</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="button">로그인</a>
+                    <a href="{{ url_for('register') }}" class="button">회원가입</a>
+                {% endif %}
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">메인 화면</a></li>
+                <li><a href="{{ url_for('manage_system') }}">시스템 관리</a></li>
+                <li><a href="{{ url_for('manage_movies') }}">영화 관리</a></li>
+                <li><a href="{{ url_for('manage_people') }}">영화인 관리</a></li>
+                <li><a href="{{ url_for('manage_events') }}">이벤트 관리</a></li>
+                <li><a href="{{ url_for('manage_influencers') }}">인플루언서 관리</a></li>
+                <li><a href="{{ url_for('manage_notifications') }}">알림 관리</a></li>
+                <!-- <li><a href="{{ url_for('change_password') }}">비밀번호 변경</a></li> -->
+                <!-- <li><a href="{{ url_for('delete_account') }}">계정 삭제</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 CineFlix</p>
+    </footer>
+</body>
+</html>
