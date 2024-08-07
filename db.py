@@ -1,7 +1,7 @@
 import mysql.connector
 import logging
 
-db_name = "cineflickx"
+db_name = "moviedb"
 
 def connect_db():
     return mysql.connector.connect(

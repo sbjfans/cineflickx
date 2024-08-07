@@ -46,6 +46,7 @@ def init_db():
     )
     """)
 
+
     db.commit()
     cursor.close()
     db.close()
